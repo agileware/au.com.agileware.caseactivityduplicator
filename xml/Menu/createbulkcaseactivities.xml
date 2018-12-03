@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/createbulkcaseactivities/create</path>
+    <page_callback>CRM_Createbulkcaseactivities_Form_CaseActivities</page_callback>
+    <title>Create Case Activities</title>
+    <access_arguments>access my cases and activities</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/createbulkcaseactivities/selectactivitytype</path>
+    <page_callback>CRM_Createbulkcaseactivities_Form_SelectActivityType</page_callback>
+    <title>Select Activity Type</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>

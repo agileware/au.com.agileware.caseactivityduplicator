@@ -204,6 +204,13 @@
     {literal}
       <script type="text/javascript">
           CRM.$(function($) {
+
+              CRM.$("body").on('click', '.case-delete-icon', function(e){
+                 e.preventDefault();
+                 CRM.$(this).parent().remove();
+                  CRM.$('input[name="case_blocks"]').val(CRM.$('.case-row').size());
+              });
+
               var doNotNotifyAssigneeFor = {/literal}{$doNotNotifyAssigneeFor|@json_encode}{literal};
               $('#activity_type_id').change(function() {
                   if ($.inArray($(this).val(), doNotNotifyAssigneeFor) != -1) {
@@ -231,11 +238,7 @@
               var previousInstance = cj( '[id^="'+ element +'"]:last' ).attr('id').slice( element.length );
               var currentInstance  = parseInt( previousInstance ) + 1;
 
-              //show primary option if block count = 2
-              if ( currentInstance == 2) {
-                  cj("#" + blockName + '-Primary').show( );
-                  cj("#" + blockName + '-Primary-html').show( );
-              }
+              CRM.$('input[name="case_blocks"]').val(currentInstance);
 
               var dataUrl = {/literal}"{crmURL h=0 q='snippet=4'}"{literal} + '&block=' + blockName + '&count=' + currentInstance;;
 

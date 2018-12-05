@@ -133,3 +133,11 @@ function createbulkcaseactivities_civicrm_alterSettingsFolders(&$metaDataFolders
 function createbulkcaseactivities_civicrm_entityTypes(&$entityTypes) {
   _createbulkcaseactivities_civix_civicrm_entityTypes($entityTypes);
 }
+
+/**
+ * Implements hook_civicrm_coreResourceList().
+ *
+ */
+function createbulkcaseactivities_civicrm_coreResourceList(&$list, $region) {
+  Civi::resources()->addStyleFile('au.com.agileware.createbulkcaseactivities', 'css/style.css', 0, $region);
+}

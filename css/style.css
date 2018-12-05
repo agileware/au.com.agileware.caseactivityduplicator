@@ -14,3 +14,7 @@
 .case-row {
     margin-top: 15px;
 }
+.case-block-bottom-instruction {
+    padding-top: 15px;
+    font-style: italic;
+}

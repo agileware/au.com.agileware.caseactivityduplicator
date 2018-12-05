@@ -1,4 +1,4 @@
-Package: au.com.agileware.createbulkcaseactivities
+Package: au.com.agileware.caseactivityduplicator
 Copyright (C) 2018, Alok Patel <alok@agileware.com.au>
 Licensed under the GNU Affero Public License 3.0 (below).
 

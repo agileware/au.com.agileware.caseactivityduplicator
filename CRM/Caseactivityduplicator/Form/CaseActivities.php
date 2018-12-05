@@ -1,13 +1,13 @@
 <?php
 
-use CRM_Createbulkcaseactivities_ExtensionUtil as E;
+use CRM_Caseactivityduplicator_ExtensionUtil as E;
 
 /**
  * Form controller class
  *
  * @see https://wiki.civicrm.org/confluence/display/CRMDOC/QuickForm+Reference
  */
-class CRM_Createbulkcaseactivities_Form_CaseActivities extends CRM_Activity_Form_Activity {
+class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_Activity {
 
   public $isRequestForBlock = FALSE;
 
@@ -100,7 +100,7 @@ class CRM_Createbulkcaseactivities_Form_CaseActivities extends CRM_Activity_Form
       parent::buildQuickForm();
     }
 
-    $this->addFormRule(array('CRM_Createbulkcaseactivities_Form_CaseActivities', 'formRule'), $this);
+    $this->addFormRule(array('CRM_Caseactivityduplicator_Form_CaseActivities', 'formRule'), $this);
   }
 
   public function addBlockReferences($blockId) {
@@ -282,7 +282,7 @@ class CRM_Createbulkcaseactivities_Form_CaseActivities extends CRM_Activity_Form
     }
 
     CRM_Core_Session::setStatus('Case Activities has been created successfully.', 'Case Activities', 'success');
-    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/createbulkcaseactivities/selectactivitytype'));
+    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/caseactivityduplicator/selectactivitytype'));
 
   }
 

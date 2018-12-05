@@ -25,7 +25,7 @@
 *}
 
 {if $addBlock}
-  {include file="CRM/Createbulkcaseactivities/Form/Block/Case.tpl"}
+  {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
 {else}
     {* this template is used for adding/editing activities for a case. *}
     <div class="crm-block crm-form-block crm-case-activity-form-block">
@@ -189,7 +189,7 @@
 
     <div class="form-layout">
       <div style="width: 100%">
-        {include file="CRM/Createbulkcaseactivities/Form/Block/Case.tpl"}
+        {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
       </div>
     </div>
     <div class="clearfix"></div>

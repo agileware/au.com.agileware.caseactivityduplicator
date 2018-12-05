@@ -1,13 +1,13 @@
 <?php
 
-use CRM_Createbulkcaseactivities_ExtensionUtil as E;
+use CRM_caseactivityduplicator_ExtensionUtil as E;
 
 /**
  * Form controller class
  *
  * @see https://wiki.civicrm.org/confluence/display/CRMDOC/QuickForm+Reference
  */
-class CRM_Createbulkcaseactivities_Form_SelectActivityType extends CRM_Core_Form {
+class CRM_Caseactivityduplicator_Form_SelectActivityType extends CRM_Core_Form {
   public function buildQuickForm() {
 
     $activityTypeValues = array(
@@ -42,7 +42,7 @@ class CRM_Createbulkcaseactivities_Form_SelectActivityType extends CRM_Core_Form
     $values = $this->exportValues();
     $activityTypeId = CRM_Utils_Array::value("activity_type_id", $values, "");
 
-    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/createbulkcaseactivities/create', array(
+    CRM_Utils_System::redirect(CRM_Utils_System::url('civicrm/caseactivityduplicator/create', array(
       'atype' => $activityTypeId,
     )));
   }

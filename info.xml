@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<extension key="au.com.agileware.createbulkcaseactivities" type="module">
-  <file>createbulkcaseactivities</file>
-  <name>Create Bulk Case Activities</name>
+<extension key="au.com.agileware.caseactivityduplicator" type="module">
+  <file>caseactivityduplicator</file>
+  <name>Case Activity Duplicator</name>
   <description>A utility to create bulk case activities with common data.</description>
   <license>AGPL-3.0</license>
   <maintainer>
@@ -9,8 +9,8 @@
     <email>support@agileware.com.au</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">https://bitbucket.org/agileware/au.com.agileware.createbulkcaseactivities</url>
-    <url desc="Documentation">https://bitbucket.org/agileware/au.com.agileware.createbulkcaseactivities</url>
+    <url desc="Main Extension Page">https://bitbucket.org/agileware/au.com.agileware.caseactivityduplicator</url>
+    <url desc="Documentation">https://bitbucket.org/agileware/au.com.agileware.caseactivityduplicator</url>
     <url desc="Support">https://agileware.com.au/contact</url>
     <url desc="Licensing">https://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
@@ -21,6 +21,6 @@
     <ver>4.7</ver>
   </compatibility>
   <civix>
-    <namespace>CRM/Createbulkcaseactivities</namespace>
+    <namespace>CRM/Caseactivityduplicator</namespace>
   </civix>
 </extension>

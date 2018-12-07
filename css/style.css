@@ -18,3 +18,12 @@
     padding-top: 15px;
     font-style: italic;
 }
+.crm-container .crm-form-block.crm-case-selection-block {
+    padding: 15px;
+}
+.crm-form-top-help-text-block {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 13px;
+    font-style: italic;
+}

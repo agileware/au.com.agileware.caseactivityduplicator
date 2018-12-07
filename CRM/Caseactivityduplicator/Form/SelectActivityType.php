@@ -30,10 +30,12 @@ class CRM_Caseactivityduplicator_Form_SelectActivityType extends CRM_Core_Form {
     $this->addButtons(array(
       array(
         'type' => 'submit',
-        'name' => E::ts('Submit'),
+        'name' => E::ts('Next'),
         'isDefault' => TRUE,
       ),
     ));
+
+    CRM_Utils_System::setTitle('Step 1 - Select the Activity Type');
 
     parent::buildQuickForm();
   }

@@ -27,12 +27,13 @@
 {if $addBlock}
   {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
 {else}
+    <div class="crm-form-top-help-text-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+    </div>
     {* this template is used for adding/editing activities for a case. *}
     <div class="crm-block crm-form-block crm-case-activity-form-block">
 
       {if $action neq 8 and $action  neq 32768 }
-        {* Include form buttons on top for new and edit modes. *}
-        <div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="top"}</div>
 
         {* added onload javascript for source contact*}
         {include file="CRM/Activity/Form/ActivityJs.tpl" tokenContext="case_activity"}
@@ -186,15 +187,27 @@
   {/if}
 
     {crmRegion name='case-activity-form'}{/crmRegion}
+</div>
 
-    <div class="form-layout">
-      <div style="width: 100%">
-        {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
-      </div>
-    </div>
-    <div class="clearfix"></div>
+    <div>
 
-    <br><br>
+        <h1 class="title" id="page-title">Step 3 - Select the Cases and Assignees</h1>
+
+        <div class="crm-form-top-help-text-block">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+        </div>
+
+        <div class="crm-block crm-form-block crm-case-activity-form-block crm-case-selection-block">
+            <div class="form-layout">
+                <div style="width: 100%">
+                    {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+    <br>
 
     <div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>
 

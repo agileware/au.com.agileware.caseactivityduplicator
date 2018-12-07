@@ -87,7 +87,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       if (isset($values['case_blocks'])) {
         $caseBlocks = $values['case_blocks'];
       }
-      while($numBlocks <= $caseBlocks) {
+      while ($numBlocks <= $caseBlocks) {
         $this->addBlockReferences($numBlocks);
         $caseNumBlocks[] = $numBlocks;
         $numBlocks++;
@@ -96,11 +96,30 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       $this->assign('caseNumBlocks', $caseNumBlocks);
       $this->assign('blockId', $caseBlocks);
 
-      CRM_Utils_System::setTitle("Activity Details");
+      CRM_Utils_System::setTitle("Step 2 - Enter the Activity Details for each Activity");
       parent::buildQuickForm();
     }
 
     $this->addFormRule(array('CRM_Caseactivityduplicator_Form_CaseActivities', 'formRule'), $this);
+
+    $message = array(
+      'completed' => ts('Are you sure? This is a COMPLETED activity with the DATE in the FUTURE. Click Cancel to change the date / status. Otherwise, click OK to save.'),
+      'scheduled' => ts('Are you sure? This is a SCHEDULED activity with the DATE in the PAST. Click Cancel to change the date / status. Otherwise, click OK to save.'),
+    );
+    $js = array('onclick' => "return activityStatus(" . json_encode($message) . ");");
+    $this->addButtons(array(
+      array(
+        'type' => 'upload',
+        'name' => ts('Generate Activities Now'),
+        'js' => $js,
+        'isDefault' => TRUE,
+      ),
+      array(
+        'type' => 'cancel',
+        'name' => ts('Cancel'),
+      ),
+    ));
+
   }
 
   public function addBlockReferences($blockId) {
@@ -148,7 +167,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
         'Activity'
       );
     }
-
 
     CRM_Core_BAO_File::formatAttachment($params,
       $params,

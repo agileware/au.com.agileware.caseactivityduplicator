@@ -1,3 +1,6 @@
+<div class="crm-form-top-help-text-block">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+</div>
 <table class="form-layout-compressed">
   <tbody>
     <tr class="crm-activity-form-block-activity_type_id">

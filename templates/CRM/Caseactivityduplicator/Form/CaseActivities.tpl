@@ -194,9 +194,9 @@
         <h1 class="title" id="page-title">Step 3 - Select the Cases and Assignees</h1>
 
         <div class="crm-form-top-help-text-block">
-            Select a Case and the Assignees to be assigned to each Activity that will be created.<br/>
+            Select a Case and the Assignees for each Activity to be created.<br/>
             You can also select the same Case multiple times, if you want to create Activities with individual Assignees.<br/>
-            An email notification may be sent for each new Activity, based on the CiviCRM configuration (Administer - Settings - Display Preferences, Do not notify assignees for).
+            An email notification may be sent for each new Activity, based on the CiviCRM configuration (<i>Administer - Settings - Display Preferences, Do not notify assignees for</i>).
         </div>
 
         <div class="crm-block crm-form-block crm-case-activity-form-block crm-case-selection-block">

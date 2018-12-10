@@ -19,3 +19,4 @@
         </div>
     </div>
 {/if}
+<div class="clearfix"></div>

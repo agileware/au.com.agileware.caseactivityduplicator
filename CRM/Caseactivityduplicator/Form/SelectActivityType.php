@@ -16,6 +16,7 @@ class CRM_Caseactivityduplicator_Form_SelectActivityType extends CRM_Core_Form {
     $activityTypes = civicrm_api3('OptionValue', 'get', [
       'sequential'      => 1,
       'option_group_id' => "activity_type",
+      'options'         => [ 'limit' => 0 ],
     ]);
     $activityTypes = $activityTypes['values'];
 

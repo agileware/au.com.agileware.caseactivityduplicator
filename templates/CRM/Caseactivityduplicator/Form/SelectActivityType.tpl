@@ -1,5 +1,6 @@
 <div class="crm-form-top-help-text-block">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+        The Case Activity Duplicator enables you to quickly create duplicate Activities for Cases and set the Assignee(s).<br/>
+        Use the field below to select the Activity Type to be used. The fields for this Activity Type will be shown on the following page.
 </div>
 <table class="form-layout-compressed">
   <tbody>

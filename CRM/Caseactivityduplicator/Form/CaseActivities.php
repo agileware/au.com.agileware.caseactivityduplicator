@@ -179,6 +179,8 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
     foreach ($params['cases'] as $key => $case) {
       $params['case_id'] = $case['case_id'];
       $params['assignee_contact_id'] = explode(',', $case['assignee']);
+      // Set the target contact id to the Case client(s)
+      $params['target_contact_id'] = civicrm_api3('Case', 'getvalue', [ 'id' => $case['case_id'], 'return' => 'contact_id' ]);
       // activity create/update
       $activity = CRM_Activity_BAO_Activity::create($params);
       $vvalue[] = array('case_id' => $case['case_id'], 'actId' => $activity->id);
@@ -238,7 +240,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
     $selectedContacts = array('contact_check');
     $activityContacts = CRM_Activity_BAO_ActivityContact::buildOptions('record_type_id', 'validate');
     $assigneeID = CRM_Utils_Array::key('Activity Assignees', $activityContacts);
-    if (Civi::settings()->get('activity_assignee_notification')) {
+    if (Civi::settings()->get('activity_assignee_notification') && !in_array($params['activity_type_id'], Civi::settings()->get('do_not_notify_assignees_for'))) {
       $selectedContacts[] = 'assignee_contact_id';
     }
 

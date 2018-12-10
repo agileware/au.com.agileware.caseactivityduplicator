@@ -28,8 +28,7 @@
   {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
 {else}
     <div class="crm-form-top-help-text-block">
-        The Case Activity Duplicator enables you to quickly create duplicate Activities for Cases and set the Assignee(s).
-        Use the field below to select the Activity Type to be used. The fields for this Activity Type will be shown on the following page.
+        Use the fields below to set the values to be copied to each Activity that is created.
     </div>
     {* this template is used for adding/editing activities for a case. *}
     <div class="crm-block crm-form-block crm-case-activity-form-block">

@@ -18,8 +18,4 @@
             <a id='addCaseBlock' href="#" title={ts}Add{/ts} onClick="buildAdditionalBlocks('Case');return false;">{ts}Add another case{/ts}</a>
         </div>
     </div>
-
-    <div class="case-block-row case-block-bottom-instruction">
-        <div class="case-block-row">{ts}Creates single activity in each case with selected Assignee(s){/ts}</div>
-    </div>
 {/if}

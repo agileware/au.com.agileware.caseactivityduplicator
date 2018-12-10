@@ -191,7 +191,7 @@
 
     <div>
 
-        <h1 class="title" id="page-title">Step 3 - Select the Cases and Assignees</h1>
+        <h1 class="title">Step 3 - Select the Cases and Assignees</h1>
 
         <div class="crm-form-top-help-text-block">
             {ts}Select a Case and the Assignees for each Activity to be created.{/ts}<br/>

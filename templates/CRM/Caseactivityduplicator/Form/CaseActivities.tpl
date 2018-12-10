@@ -28,7 +28,8 @@
   {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
 {else}
     <div class="crm-form-top-help-text-block">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+        The Case Activity Duplicator enables you to quickly create duplicate Activities for Cases and set the Assignee(s).
+        Use the field below to select the Activity Type to be used. The fields for this Activity Type will be shown on the following page.
     </div>
     {* this template is used for adding/editing activities for a case. *}
     <div class="crm-block crm-form-block crm-case-activity-form-block">
@@ -194,7 +195,9 @@
         <h1 class="title" id="page-title">Step 3 - Select the Cases and Assignees</h1>
 
         <div class="crm-form-top-help-text-block">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna enim, finibus id nulla et, tincidunt pulvinar dui. Donec efficitur, nunc vitae interdum commodo, nisl velit elementum erat
+            Use the fields below to select a Case and then one or more Assignees to be assigned to the Case Activity.
+            You can also select the same Case multiple times, if you want to create individual Activities for the same Case.
+            An email notification may also be sent for Activity created, based on your CiviCRM settings.
         </div>
 
         <div class="crm-block crm-form-block crm-case-activity-form-block crm-case-selection-block">

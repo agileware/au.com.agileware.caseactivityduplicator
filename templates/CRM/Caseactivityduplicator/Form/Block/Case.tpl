@@ -19,6 +19,3 @@
         </div>
     </div>
 {/if}
-<div class="crm-form-top-help-text-block">
-        {ts}Use the button below to generate the multiple Activities for the selected Cases.{/ts}
-</div>

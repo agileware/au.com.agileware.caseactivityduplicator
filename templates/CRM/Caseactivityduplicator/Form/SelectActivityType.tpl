@@ -1,5 +1,5 @@
 <div class="crm-form-top-help-text-block">
-        {ts}Case Activity Duplicator enables you to quickly generate Activities for Cases and set the Assignee(s) using a single Activity as a template.{ts}<br/>
+        {ts}Case Activity Duplicator enables you to quickly generate Activities for Cases and set the Assignee(s) using a single Activity as a template.{/ts}<br/>
         {ts}Use the field below to select the Activity Type to be used. The fields for this Activity Type will be shown on the following page.{/ts}
 </div>
 <table class="form-layout-compressed">

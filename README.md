@@ -1,44 +1,52 @@
-# au.com.agileware.createbulkcaseactivities
+Case Activity Duplicator
+------
 
-![Screenshot](/images/screenshot.png)
+CiviCRM extension to bulk generate and assign Activities for Cases, reducing repetitive data entry when you need to create Activities for multiple Cases in CiviCRM.
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+The Case Activity Duplicator enables you to quickly generate Activities for Cases and set the Assignee(s) using a single Activity as a template.
 
-The extension is licensed under [AGPL-3.0](LICENSE.txt).
+Installation
+------
 
-## Requirements
+1. Ensure that the CiviCase (Case Management) is enabled in your CiviCRM, see "Administer / System Settings / Enable Components"
+1. Download the [latest version of this extension](https://github.com/agileware/au.com.agileware.caseactivityduplicator/archive/master.zip)
+1. Unzip in the CiviCRM extension directory, as defined in "System Settings / Directories'.
+1. Go to "Administer / System Settings / Extensions" and enable the "Case Activity Duplicator (au.com.agileware.caseactivityduplicator)" extension.
 
-* PHP v5.4+
-* CiviCRM (*FIXME: Version number*)
+Usage
+------
+1. Select **Case Activity Duplicator** from the Cases menu in CiviCRM.
+1. The first step requires you to select the **Activity Type** to be used, then the fields for this Activity Type will be shown along with any custom fields that have been created.
+1. Complete the fields on the Activity Form as you would normally.
+1. You can then select a **Case** and the **Assignees** for **each Activity** to be created.
+1. You can also select the same Case multiple times, if you want to create Activities with individual Assignees.
+1. An email notification may be sent for each Activity created, based on the CiviCRM configuration, see "Administer / Customize Data and Screens / Display Preferences, Do not notify assignees for".
+1. Click the **Generate Activities Now** button to immediate generate Activities for the selected Cases.
 
-## Installation (Web UI)
 
-This extension has not yet been published for installation via the web UI.
+![Case Activity Duplicator menu item](screenshot/screenshot-1.png) 
 
-## Installation (CLI, Zip)
+![Step 1 - Select Activity Type](screenshot/screenshot-2.png) 
 
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
 
-```bash
-cd <extension-dir>
-cv dl au.com.agileware.caseactivityduplicator@https://github.com/FIXME/au.com.agileware.caseactivityduplicator/archive/master.zip
-```
+![Step 2 - Use the Activity Form as a template and select the Cases and Assignees](screenshot/screenshot-3.png)  
 
-## Installation (CLI, Git)
 
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
+About the Authors
+------
 
-```bash
-git clone https://github.com/FIXME/au.com.agileware.caseactivityduplicator.git
-cv en caseactivityduplicator
-```
+This CiviCRM extension was developed by the team at [Agileware](https://agileware.com.au).
 
-## Usage
+[Agileware](https://agileware.com.au) provide a range of CiviCRM services including:
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
+  * CiviCRM migration
+  * CiviCRM integration
+  * CiviCRM extension development
+  * CiviCRM support
+  * CiviCRM hosting
+  * CiviCRM remote training services
 
-## Known Issues
+Support your Australian [CiviCRM](https://civicrm.org) developers, [contact Agileware](https://agileware.com.au/contact) today!
 
-(* FIXME *)
+
+![Agileware](logo/agileware-logo.png)  

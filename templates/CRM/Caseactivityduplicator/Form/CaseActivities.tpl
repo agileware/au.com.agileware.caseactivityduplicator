@@ -205,7 +205,6 @@
                     {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
                 </div>
             </div>
-            <div class="clearfix"></div>
         </div>
 
     <div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>

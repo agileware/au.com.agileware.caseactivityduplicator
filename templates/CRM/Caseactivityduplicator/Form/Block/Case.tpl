@@ -1,8 +1,12 @@
 {if !$addBlock}
-    <div class="case-block-row">
-        <div class="case-block-row col-50"><strong>{ts}Case{/ts}</strong></div>
-        <div class="case-block-row col-50"><strong>{ts}Activity Assignee(s){/ts}</strong></div>
-    </div>
+    <table class="form-layout-compressed">
+        <thead>
+            <tr class="case-block-row">
+                <td width="50%"><strong>{ts}Case{/ts}</strong></td>
+                <td><strong>{ts}Activity Assignee(s){/ts}</strong></td>
+            </tr>
+        </thead>
+        <tbody>
 {/if}
 {if !$addBlock and $blockId > 1}
     {foreach from = $caseNumBlocks item = caseNum}
@@ -13,12 +17,16 @@
 {/if}
 
 {if !$addBlock}
-    <div>
-        <div class="case-block-row">
-            <a id='addCaseBlock' href="#" title={ts}Add{/ts} onClick="buildAdditionalBlocks('Case');return false;">{ts}Add another Case{/ts}</a>
-        </div>
-    </div>
-    <div class="case-block-row case-block-bottom-instruction">
-        <div class="case-block-row">{ts}Click button below to immediate generate Activities for the selected Cases.{/ts}</div>
-    </div>
+        <tr>
+           <td colspan="2">
+               <a id='addCaseBlock' href="#" title={ts}Add{/ts} onClick="buildAdditionalBlocks('Case');return false;">{ts}Add another Case{/ts}</a>
+           </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="case-block-row">{ts}Click button below to immediate generate Activities for the selected Cases.{/ts}</div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
 {/if}

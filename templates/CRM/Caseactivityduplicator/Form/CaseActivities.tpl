@@ -208,9 +208,6 @@
             <div class="clearfix"></div>
         </div>
 
-
-    <br>
-
     <div class="crm-submit-buttons">{include file="CRM/common/formButtons.tpl" location="bottom"}</div>
 
     {if $action eq 1 or $action eq 2}
@@ -222,7 +219,7 @@
 
               CRM.$("body").on('click', '.case-delete-icon', function(e){
                  e.preventDefault();
-                 CRM.$(this).parent().remove();
+                 CRM.$(this).parents('.case-block-row').remove();
                   CRM.$('input[name="case_blocks"]').val(CRM.$('.case-row').size());
               });
 
@@ -273,6 +270,9 @@
                   url     : dataUrl,
                   async   : false,
                   success : function(html){
+                      html = html.replace(/\n|\r/g, "");
+                      var r = /<div>.*<\/div>/gi;
+                      html = html.replace(r,"");
                       cj(fname).after(html);
                       cj(fname).nextAll().trigger('crmLoad');
                   }

@@ -1,15 +1,13 @@
 .case-delete-icon {
     position: absolute;
-    top: 3px;
-    right: 7px;
+    top: 5px;
+    right: -15px;
 }
 .case-block-row {
     width: 100%;
-    float: left;
-    position: relative;
 }
-.case-block-row.col-50 {
-    width: 50%;
+.case-block-row td {
+    position: relative;
 }
 .case-row {
     margin-top: 15px;
@@ -20,6 +18,7 @@
 }
 .crm-container .crm-form-block.crm-case-selection-block {
     padding: 15px;
+    margin-bottom: 20px;
 }
 .crm-form-top-help-text-block {
     display: block;

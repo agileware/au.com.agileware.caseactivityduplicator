@@ -17,7 +17,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
   }
 
   private function getSubmittedValues() {
-    $values = $this->exportValues();
+    $values = $this->controller->exportValues($this->_name);
     if (isset($_POST['cases'])) {
       $values['cases'] = $_POST['cases'];
     }
@@ -80,7 +80,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       $this->assign('addBlock', FALSE);
 
       $numBlocks = 1;
-      $caseBlocks = 0;
+      $caseBlocks = 1;
       $values = $this->getSubmittedValues();
       $caseNumBlocks = array();
 
@@ -147,8 +147,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
    */
   public function postProcess($params = NULL) {
     $params = $this->getSubmittedValues();
-    echo "<pre>";
-    print_r($params);
 
     $params['activity_date_time'] = CRM_Utils_Date::processDate($params['activity_date_time'], $params['activity_date_time_time']);
     $params['activity_type_id'] = $this->_activityTypeId;

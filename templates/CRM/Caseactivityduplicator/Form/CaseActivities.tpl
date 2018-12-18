@@ -27,7 +27,7 @@
 {if $addBlock}
   {include file="CRM/Caseactivityduplicator/Form/Block/Case.tpl"}
 {else}
-    <div class="crm-form-top-help-text-block">
+    <div class="messages help">
         {ts}Use the fields below to set the values to be copied to each Activity that is created.{/ts}
     </div>
     {* this template is used for adding/editing activities for a case. *}
@@ -193,7 +193,7 @@
 
         <h1 class="title">Step 3 - Select the Cases and Assignees</h1>
 
-        <div class="crm-form-top-help-text-block">
+        <div class="messages help">
             {ts}Select a Case and the Assignees for each Activity to be created.{/ts}<br/>
             {ts}You can also select the same Case multiple times, if you want to create Activities with individual Assignees.{/ts}<br/>
             {ts}An email notification may be sent for each new Activity, based on the CiviCRM configuration (<em>Administer - Settings - Display Preferences, Do not notify assignees for</em>){/ts}.

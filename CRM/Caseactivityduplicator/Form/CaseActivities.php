@@ -12,7 +12,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
   public $isRequestForBlock = FALSE;
 
   public function preProcess() {
-    $values = $this->exportValues();
     parent::preProcess();
   }
 
@@ -61,8 +60,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
   }
 
   public function buildQuickForm() {
-    $blockId = 1;
-
     $block = CRM_Utils_Request::retrieve('block', 'String', $form, FALSE, "");
     if ($block) {
       $this->isRequestForBlock = TRUE;
@@ -102,16 +99,10 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
 
     $this->addFormRule(array('CRM_Caseactivityduplicator_Form_CaseActivities', 'formRule'), $this);
 
-    $message = array(
-      'completed' => ts('Are you sure? This is a COMPLETED activity with the DATE in the FUTURE. Click Cancel to change the date / status. Otherwise, click OK to save.'),
-      'scheduled' => ts('Are you sure? This is a SCHEDULED activity with the DATE in the PAST. Click Cancel to change the date / status. Otherwise, click OK to save.'),
-    );
-    $js = array('onclick' => "return activityStatus(" . json_encode($message) . ");");
     $this->addButtons(array(
       array(
         'type' => 'upload',
         'name' => ts('Generate Activities Now'),
-        'js' => $js,
         'isDefault' => TRUE,
       ),
       array(
@@ -122,6 +113,11 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
 
   }
 
+  /**
+   * Add block reference fields for given block ID.
+   *
+   * @param $blockId
+   */
   public function addBlockReferences($blockId) {
     $this->addEntityRef("cases[$blockId][case_id]", 'Case', array(
       'entity' => 'Case',
@@ -187,24 +183,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
     }
 
     foreach ($vvalue as $vkey => $vval) {
-      if ($vval['actId']) {
-        // add tags if exists
-        $tagParams = array();
-        if (!empty($params['tag'])) {
-          foreach ($params['tag'] as $tag) {
-            $tagParams[$tag] = 1;
-          }
-        }
-
-        //save static tags
-        CRM_Core_BAO_EntityTag::create($tagParams, 'civicrm_activity', $vval['actId']);
-
-        //save free tags
-        if (isset($params['taglist']) && !empty($params['taglist'])) {
-          CRM_Core_Form_Tag::postProcess($params['taglist'], $vval['actId'], 'civicrm_activity', $this);
-        }
-      }
-
       // update existing case record if needed
       $caseParams = $params;
       $caseParams['id'] = $vval['case_id'];
@@ -224,10 +202,6 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       );
       CRM_Case_BAO_Case::processCaseActivity($caseParams);
     }
-
-    // Insert civicrm_log record for the activity (e.g. store the
-    // created / edited by contact id and date for the activity)
-    // Note - civicrm_log is already created by CRM_Activity_BAO_Activity::create()
 
     // send copy to selected contacts.
     $mailStatus = '';

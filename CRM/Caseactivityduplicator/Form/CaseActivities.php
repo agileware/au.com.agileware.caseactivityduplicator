@@ -12,6 +12,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
   public $isRequestForBlock = FALSE;
 
   public function preProcess() {
+    $this->supportsActivitySeparation = FALSE;
     parent::preProcess();
   }
 
@@ -75,6 +76,7 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       $this->add('select', 'medium_id', ts('Medium'), $encounterMediums, TRUE);
       $this->add('hidden', 'case_blocks', 1);
       $this->assign('addBlock', FALSE);
+      $this->addElement('checkbox', 'with_client', ts('With Client'));
 
       $numBlocks = 1;
       $caseBlocks = 1;
@@ -174,7 +176,18 @@ class CRM_Caseactivityduplicator_Form_CaseActivities extends CRM_Activity_Form_A
       $params['case_id'] = $case['case_id'];
       $params['assignee_contact_id'] = explode(',', $case['assignee']);
       // Set the target contact id to the Case client(s)
-      $params['target_contact_id'] = civicrm_api3('Case', 'getvalue', [ 'id' => $case['case_id'], 'return' => 'contact_id' ]);
+
+      if (isset($params['with_client']) && $params['with_client']) {
+        $clientId = civicrm_api3('Case', 'getvalue', [ 'id' => $case['case_id'], 'return' => 'contact_id' ]);
+        if (isset($params['target_contact_id']) && $params['target_contact_id'] != "" && count($clientId) > 0) {
+          $clientId = "," . $clientId[1];
+        }
+        $params['target_contact_id'] .= $clientId;
+      }
+      if ($params['target_contact_id'] != "") {
+        $params['target_contact_id'] = explode(",", $params['target_contact_id']);
+      }
+
       // activity create/update
       $activity = CRM_Activity_BAO_Activity::create($params);
       $vvalue[] = array('case_id' => $case['case_id'], 'actId' => $activity->id);

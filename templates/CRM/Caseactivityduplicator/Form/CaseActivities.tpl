@@ -40,6 +40,14 @@
                     <table class="form-layout-compressed">
                         <tbody>
 
+                            <tr class="crm-case-activity-form-block-target_contact_id">
+                                <td class="label">{$form.target_contact_id.label}</td>
+                                <td class="view-value">
+                                    {$form.target_contact_id.html}<br>
+                                    {$form.with_client.html}{$form.with_client.label}
+                                </td>
+                            </tr>
+
                             <tr class="crm-case-activity-form-block-source_contact_id">
                                 <td class="label">{$form.source_contact_id.label}</td>
                                 <td class="view-value">{$form.source_contact_id.html}</td>

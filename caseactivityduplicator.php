@@ -175,5 +175,3 @@ function caseactivityduplicator_civicrm_navigationMenu(&$menu) {
     $menu[$navId] = $navigationMenu;
   }
 }
-
-ini_set('display_errors', 1);

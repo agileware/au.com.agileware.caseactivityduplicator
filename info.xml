@@ -22,5 +22,6 @@
   </compatibility>
   <civix>
     <namespace>CRM/Caseactivityduplicator</namespace>
+    <format>20.06.0</format>
   </civix>
 </extension>

@@ -22,6 +22,9 @@
   </compatibility>
   <civix>
     <namespace>CRM/Caseactivityduplicator</namespace>
-    <format>20.06.0</format>
+    <format>22.05.2</format>
   </civix>
+  <mixins>
+    <mixin>menu-xml@1.0.0</mixin>
+  </mixins>
 </extension>

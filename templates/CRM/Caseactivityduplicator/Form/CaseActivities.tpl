@@ -63,7 +63,7 @@
                             </tr>
                             <tr class="crm-case-activity-form-block-activity_date_time">
                                 <td class="label">{$form.activity_date_time.label}</td>
-                                <td class="view-value">{include file="CRM/common/jcalendar.tpl" elementName=activity_date_time}</td>
+                                <td class="view-value">{$form.activity_date_time.html}</td>
                             </tr>
                             <tr>
                                 <td colspan="2"><div id="customData"></div></td>
